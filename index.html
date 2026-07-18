@@ -36,23 +36,28 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Watermark background */
+    /* Watermark */
     .watermark {
       position: fixed;
       top: 0;
       right: 0;
       z-index: 0;
-      width: 204px;
-      height: 222px;
+      width: 200px;
+      height: 220px;
       pointer-events: none;
-      opacity: 1;
-      mix-blend-mode: multiply;
+      overflow: hidden;
     }
 
-    .watermark img {
-      width: 100%;
-      height: 100%;
-      display: block;
+    .watermark::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('KebenaMKC-logo.svg') no-repeat top right;
+      background-size: contain;
+      filter: grayscale(100%) opacity(0.15);
     }
 
     /* Fixed header */
@@ -225,16 +230,14 @@
       .avatar { width: 68px; height: 68px; }
       .link-card { padding: 12px 14px; }
       .icon-box { width: 36px; height: 36px; border-radius: 10px; }
-      .watermark { width: 140px; height: 152px; }
+      .watermark { width: 140px; height: 154px; }
     }
   </style>
 </head>
 <body>
 
   <!-- Watermark -->
-  <div class="watermark">
-    <img src="KebenaMKC-logo-Watermark.svg" alt="" />
-  </div>
+  <div class="watermark"></div>
 
   <!-- Fixed Header -->
   <div class="header-fixed">
