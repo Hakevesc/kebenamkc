@@ -32,8 +32,30 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 40px 20px;
+      padding: 0 20px;
       -webkit-font-smoothing: antialiased;
+    }
+
+    /* Fixed header */
+    .header-fixed {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: var(--bg);
+      padding: 28px 20px 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .scroll-content {
+      margin-top: 180px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     /* Profile */
@@ -177,7 +199,7 @@
 
     /* Responsive */
     @media (max-width: 480px) {
-      body { padding: 28px 14px; }
+      body { padding: 0 14px; }
       .profile h1 { font-size: 20px; }
       .avatar { width: 68px; height: 68px; }
       .link-card { padding: 12px 14px; }
@@ -187,16 +209,20 @@
 </head>
 <body>
 
-  <!-- Profile -->
-  <div class="profile">
-    <div class="avatar">
-      <img src="logo.png" alt="MKC Logo" />
+  <!-- Fixed Header -->
+  <div class="header-fixed">
+    <div class="profile">
+      <div class="avatar">
+        <img src="logo.png" alt="MKC Logo" />
+      </div>
+      <h1>መሰረተ ክርስቶስ ቤተክርስቲያን ቀበና አጥቢያ</h1>
+      <p class="subtitle">Kebena Meserete Kristos Church</p>
     </div>
-    <h1>መሰረተ ክርስቶስ ቤተክርስቲያን ቀበና አጥቢያ</h1>
-    <p class="subtitle">Kebena Meserete Kristos Church</p>
   </div>
 
-  <!-- Links -->
+  <!-- Scrollable Content -->
+  <div class="scroll-content">
+
   <div class="links">
 
     <!-- Telegram -->
@@ -292,6 +318,8 @@
   <footer>
     <p>© 2026 መሰረተ ክርስቶስ ቤተክርስቲያን ቀበና አጥቢያ</p>
   </footer>
+
+  </div>
 
 </body>
 </html>
